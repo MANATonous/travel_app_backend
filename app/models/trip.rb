@@ -5,6 +5,7 @@ class Trip < ApplicationRecord
 
   has_attached_file :photo, styles: { med: "640x480" }
 
+  # validates trip params before saving to DB
   validates_attachment :photo, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
     size: { in: 0..10.megabytes }
