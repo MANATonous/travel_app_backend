@@ -11,3 +11,5 @@ json.array! @find_trip do |trip|
   json.link trip.link
   json.photo asset_url(trip.photo.url(:med))
 end
+
+# Creates JSON object as instance variable for delivery to frontend as JSON, see controllers for more information

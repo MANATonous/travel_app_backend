@@ -3,6 +3,7 @@ class User < ApplicationRecord
   has_many :user_trips
   has_many :trips, :through => :user_trips
 
+  # Validations for user object before saving to db
   has_attached_file :avatar, styles: { small: "64x64", med: "100x100", large: "200x200" }
   validates_attachment :avatar, presence: true,
     content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] },
